@@ -38,7 +38,7 @@ func fileDialog(title string, filter string) (string, error) {
 	output, err := exec.Command(osascript, "-e", `choose folder `).Output()
 	if err != nil {
 		if exitError, ok := err.(*exec.ExitError); ok {
-			fmt.Printf("miguelpruivo/plugins_flutter_file_picker/go: file dialog exited with code %d and output `%s`\n", exitError.ExitCode(), string(output))
+			fmt.Printf("kenthinson/flutter_file_picker/go: file dialog exited with code %d and output `%s`\n", exitError.ExitCode(), string(output))
 			return "", nil // user probably canceled or closed the selection window
 		}
 		return "", errors.Wrap(err, "failed to open file dialog")
